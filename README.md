@@ -2,4 +2,4 @@
 
 ## Credits
 ### Placeholder Assets
-All placeholder assets are by (kevins moms house)[https://kevins-moms-house.itch.io/]
+All placeholder assets are by [kevins moms house](https://kevins-moms-house.itch.io/)
