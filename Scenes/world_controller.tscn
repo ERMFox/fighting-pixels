@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://bvsbscpkeirpv"]
+
+[ext_resource type="Script" path="res://scripts/worldcontroller.gd" id="1_ewmh1"]
+[ext_resource type="Texture2D" uid="uid://buyqm7x72a8d3" path="res://Stun Bar.png" id="2_1lovt"]
+[ext_resource type="Texture2D" uid="uid://4l82xbbckp47" path="res://Media/UI/Health Bar.png" id="2_jsmh6"]
+[ext_resource type="Script" path="res://scripts/player_info.gd" id="2_yfa42"]
+[ext_resource type="Texture2D" uid="uid://bmihbwf1u2nxs" path="res://Media/UI/Red-export.png" id="3_qwrms"]
+[ext_resource type="Texture2D" uid="uid://civs62na0tlry" path="res://Media/UI/stun-export.png" id="5_7bwpa"]
+
+[node name="WorldController" type="Node2D"]
+script = ExtResource("1_ewmh1")
+
+[node name="Player1Info" type="Node" parent="."]
+script = ExtResource("2_yfa42")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Player1Info"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HealthBar" type="TextureProgressBar" parent="Player1Info/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+texture_over = ExtResource("2_jsmh6")
+texture_progress = ExtResource("3_qwrms")
+
+[node name="StunBar" type="TextureProgressBar" parent="Player1Info/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+texture_over = ExtResource("2_1lovt")
+texture_progress = ExtResource("5_7bwpa")
+
+[node name="Player2Info" type="Node" parent="."]
+script = ExtResource("2_yfa42")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Player2Info"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -320.0
+offset_bottom = 164.0
+grow_horizontal = 0
+
+[node name="HealthBar" type="TextureProgressBar" parent="Player2Info/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+texture_over = ExtResource("2_jsmh6")
+texture_progress = ExtResource("3_qwrms")
+
+[node name="StunBar" type="TextureProgressBar" parent="Player2Info/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+texture_over = ExtResource("2_1lovt")
+texture_progress = ExtResource("5_7bwpa")

@@ -14,20 +14,22 @@ kanban-plugin: board
 
 ## To-Do
 
-- [ ] AI Research #research #Medium-Priority @{2024-11-06}
-- [ ] initial Player Mechanics #High-Priority @{2024-11-06}
+- [ ] AI Research #research #Medium-Priority @{2024-11-13}
+- [ ] initial Player Mechanics #High-Priority @{2024-11-13}
 - [ ] Create Player Character #High-Priority @{2024-11-13}
-- [ ] Game UI #High-Priority
+- [ ] Player UI Functionality #High-Priority
 
 
 ## Ongoing
 
-- [ ] Create Tile Map #High-Priority @{2024-11-06}
-- [ ] Placeholder Assets #Low-Priority
+- [ ] Create Tile Map #High-Priority @{2024-11-13}
+- [ ] UI functionality #High-Priority @{2024-11-13}
 
 
 ## Done
 
+- [x] Game UI #High-Priority
+- [x] Placeholder Assets #Low-Priority
 - [x] Basic UI Design #High-Priority  @{2024-11-06}
 - [x] Basic Godot Setup
 - [x] GDD Completion

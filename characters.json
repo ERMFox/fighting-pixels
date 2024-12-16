@@ -1,0 +1,36 @@
+{
+	"characters" : [
+		{
+			"name": "fighter",
+			"icon_location": "res://icon.svg",
+			"data":{
+				"health": 100,
+				"stagger": 100,
+				"stagger_x": 1,
+				"base_damage": 10,
+				"moves":{
+					"Light Punch": {
+						"Stagger": 15,
+						"Damage": 10
+					},
+					"Heavy Punch":{
+						"Stagger": 30,
+						"Damage": 20
+					}
+				}
+			}
+		},
+		{
+			"name": "antihero",
+			"icon_location": "res://Media/Placeholders - VIEW READEME/fantasy_ [version 2.0]/tundra_/ice_.png"
+		},
+		{
+			"name": "mage",
+			"icon_location": "res://Media/Placeholders - VIEW READEME/fantasy_ [version 2.0]/tundra_/tundra_.png"
+		},
+		{
+			"name": "warlock",
+			"icon_location": "res://icon.svg"
+		},
+	]
+}

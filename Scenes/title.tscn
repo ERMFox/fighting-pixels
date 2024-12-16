@@ -1,3 +1,55 @@
-[gd_scene format=3 uid="uid://dlglwnocox8s"]
+[gd_scene load_steps=6 format=3 uid="uid://dlglwnocox8s"]
 
-[node name="Title" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://b4tviuoryhcm0" path="res://Media/UI/PVE.png" id="2_3um04"]
+[ext_resource type="Texture2D" uid="uid://bop80s27mrfpu" path="res://Media/UI/Settings Button.png" id="2_v4qhx"]
+[ext_resource type="Texture2D" uid="uid://s082obec2cva" path="res://Media/UI/PVP.png" id="3_crmtw"]
+[ext_resource type="Texture2D" uid="uid://coqmhy0domkiy" path="res://Media/UI/Quit Button.png" id="3_gw5as"]
+[ext_resource type="Script" path="res://scripts/world controlls/menus/change to char selection.gd" id="4_p043c"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_p043c")
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Center"]
+layout_mode = 2
+ratio = 1.77
+stretch_mode = 0
+
+[node name="Buttons" type="VBoxContainer" parent="Center/AspectRatioContainer"]
+layout_mode = 2
+
+[node name="PVP" type="Button" parent="Center/AspectRatioContainer/Buttons"]
+layout_mode = 2
+icon = ExtResource("3_crmtw")
+
+[node name="PVE" type="Button" parent="Center/AspectRatioContainer/Buttons"]
+layout_mode = 2
+icon = ExtResource("2_3um04")
+
+[node name="settings" type="Button" parent="Center/AspectRatioContainer/Buttons"]
+layout_mode = 2
+icon = ExtResource("2_v4qhx")
+
+[node name="quit" type="Button" parent="Center/AspectRatioContainer/Buttons"]
+layout_mode = 2
+icon = ExtResource("3_gw5as")
+
+[node name="Background" type="Sprite2D" parent="."]
+
+[connection signal="button_up" from="Center/AspectRatioContainer/Buttons/PVP" to="." method="_on_pvp_button_up"]
+[connection signal="button_up" from="Center/AspectRatioContainer/Buttons/PVE" to="." method="_on_pve_button_up"]
+[connection signal="button_up" from="Center/AspectRatioContainer/Buttons/settings" to="." method="_on_settings_button_up"]
+[connection signal="button_up" from="Center/AspectRatioContainer/Buttons/quit" to="." method="_on_quit_button_up"]
