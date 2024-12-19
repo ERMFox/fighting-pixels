@@ -114,7 +114,7 @@ func _physics_process(delta: float) -> void:
 func handle_sword_attack() -> void:
 	# Trigger Light Attack
 	if Input.is_action_just_pressed(player_prefix + "light_attack"):
-		play_weapon_animation("Slash")
+		play_weapon_animation("Light")
 		if slash_area is Area2D:
 		# Get all overlapping bodies
 			var overlapping_bodies = slash_area.get_overlapping_bodies()
@@ -128,7 +128,7 @@ func handle_sword_attack() -> void:
 
 	# Trigger Heavy Attack
 	elif Input.is_action_just_pressed(player_prefix + "heavy_attack"):
-		play_weapon_animation("Thrust")
+		play_weapon_animation("Heavy")
 		if thrust_area is Area2D:
 		# Get all overlapping bodies
 			var overlapping_bodies = thrust_area.get_overlapping_bodies()
@@ -142,7 +142,7 @@ func handle_sword_attack() -> void:
 
 func handle_bash() -> void:
 	# Trigger Shield Bash
-	play_weapon_animation("Shield_Bash")
+	play_weapon_animation("Special")
 	if bash_area is Area2D:
 		# Get all overlapping bodies
 		var overlapping_bodies = bash_area.get_overlapping_bodies()
@@ -158,8 +158,7 @@ func handle_block() -> void:
 	# Trigger Shield Block
 	if not is_blocking:
 		is_blocking = true
-		weapon_shield.rotation_degrees = 0
-		weapon_shield.play("Shield")
+		weapon_shield.play("Defend")
 
 func play_weapon_animation(animation_name: String) -> void:
 	# Play an attack or bash animation without locking movement
@@ -170,13 +169,14 @@ func play_weapon_animation(animation_name: String) -> void:
 
 func reset_weapon_shield() -> void:
 	# Reset weapon/shield to default state
+	print("is ok")
 	weapon_shield.play("Default")
 	current_animation = ""
 	action_locked = false
 
 func _on_animation_finished() -> void:
 	# Reset to default when an animation finishes
-	if current_animation == "Shield_Bash" or current_animation == "Slash" or current_animation == "Thrust":
+	if current_animation == "Special" or current_animation == "Heavy" or current_animation == "Light":
 		reset_weapon_shield()
 		
 func _is_any_action_pressed() -> bool:
