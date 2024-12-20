@@ -23,7 +23,7 @@ var slash_area
 var thrust_area
 var bash_area
 var lock: bool = false
-
+var flipped_right: bool = false
 var death_lock: bool = false
 
 
@@ -86,12 +86,16 @@ func _physics_process(delta: float) -> void:
 			sprite.play("Running")
 		facing_direction = Vector2(direction, 0)
 		sprite.flip_h = direction < 0
-		if direction > 0:
-			weapon_shield.rotation_degrees = 90
+		if direction > 0 and flipped_right == true:
+			weapon_shield.scale.x = -weapon_shield.scale.x
 			weapon_shield.flip_h = false
-		else:
-			weapon_shield.rotation_degrees = -90
+			flipped_right = false
+			print("going right")
+		elif direction < 0 and not flipped_right:
+			weapon_shield.scale.x = -weapon_shield.scale.x
 			weapon_shield.flip_h = true
+			flipped_right = true
+			print("going left")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
